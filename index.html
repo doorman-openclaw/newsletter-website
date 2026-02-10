@@ -5,255 +5,452 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsletter — A macOS menu bar app for reading newsletters</title>
     <meta name="description" content="Read and triage newsletters from your Mac's menu bar. Connect your Gmail or Outlook, see what's unread, and never fall behind again.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M22 7l-10 7L2 7"/>
+                </svg>
+                Newsletter
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#faq">FAQ</a>
+                <a href="#download" class="nav-cta">Download</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <div class="menu-bar-preview">
-                <span class="menu-icon">✉ 5</span>
+            <div class="hero-eyebrow">
+                <span class="eyebrow-badge">New</span>
+                macOS menu bar app
             </div>
-            <h1>A newsletter reader in your Mac's menu bar</h1>
-            <p class="tagline">Pull newsletters out of your inbox and into a dedicated, keyboard-first reading environment.</p>
-            <p class="description">Click the icon, scan your feed, read what matters, archive the rest. No new accounts. No RSS migration. Connect your email and your newsletters are already there.</p>
+            <h1>Your newsletters.<br>Always one click away.</h1>
+            <p class="hero-subtitle">Pull newsletters out of your inbox and into a dedicated, keyboard-first reading environment that lives in your Mac's menu bar.</p>
             <div class="cta-buttons">
-                <a href="#download" class="btn btn-primary">Download for Free</a>
+                <a href="#download" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download for Mac
+                </a>
                 <a href="#demo" class="btn btn-secondary">Watch Demo</a>
             </div>
-            <p class="platform-note">macOS 14.0+ • 14-day trial • $9.99 one-time</p>
+            <p class="hero-meta">macOS 14.0 or later &middot; Free 14-day trial &middot; $9.99 one-time purchase</p>
         </div>
     </header>
 
+    <!-- Social Proof / Credibility -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="proof-items">
+                <div class="proof-item">
+                    <span class="proof-number">100%</span>
+                    <span class="proof-label">Local processing</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-item">
+                    <span class="proof-number">0</span>
+                    <span class="proof-label">Data sent to servers</span>
+                </div>
+                <div class="proof-divider"></div>
+                <div class="proof-item">
+                    <span class="proof-number">2s</span>
+                    <span class="proof-label">Average sync time</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Problem Section -->
     <section class="problem">
-        <div class="container">
-            <h2>The Problem</h2>
-            <p>Newsletters are the best content on the internet, but they're <strong>buried in your inbox</strong> alongside receipts, notifications, and cold outreach.</p>
-            <p>You either ignore them or context-switch out of real work to read them. Most people fall behind, mark-all-as-read, and lose the content they actually subscribed for.</p>
-            <p class="highlight">Email clients aren't built for this. They optimize for reply speed, not reading.</p>
+        <div class="container container-narrow">
+            <h2>Newsletters deserve better than your inbox.</h2>
+            <p class="problem-text">The best writing on the internet arrives as email. But it's buried alongside receipts, notifications, and cold outreach. You either ignore it or context-switch out of real work to read it.</p>
+            <p class="problem-highlight">Email clients optimize for reply speed, not reading.<br>Newsletter is built for reading.</p>
         </div>
     </section>
 
-    <!-- Feature 1: Menu Bar -->
-    <section class="feature">
-        <div class="container">
-            <div class="feature-content">
-                <h2>Lives in your menu bar</h2>
-                <p>Not your dock. Not a browser tab. Not another window to manage.</p>
-                <p>Click the icon (or hit a hotkey), scan your feed, read what matters. Close it and it's gone. The icon shows your unread count or estimated reading time at a glance.</p>
-            </div>
-            <div class="feature-visual">
-                <div class="mockup">
-                    <div class="menu-bar-demo">
-                        <div class="menu-bar-top">
-                            <span>Wi-Fi</span>
-                            <span>Battery</span>
-                            <span class="active">✉ 5</span>
-                            <span>Clock</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Features Section -->
+    <section id="features">
 
-    <!-- Feature 2: Clean List View -->
-    <section class="feature feature-alt">
-        <div class="container">
-            <div class="feature-visual">
-                <div class="mockup list-view">
-                    <div class="popover-header">
-                        <span>Inbox (5 unread)</span>
-                        <span class="shortcut">⌘K</span>
+        <!-- Feature 1: Menu Bar -->
+        <div class="feature">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-content">
+                        <div class="feature-label">Menu Bar Native</div>
+                        <h2>Lives in your menu bar. Not your dock.</h2>
+                        <p>Click the icon or press a hotkey. Scan your feed. Read what matters. Close it and it disappears. No windows to manage, no tabs to lose.</p>
+                        <p>The icon shows your unread count at a glance so you always know when something new arrives.</p>
                     </div>
-                    <div class="newsletter-list">
-                        <div class="newsletter-item unread">
-                            <div class="item-header">
-                                <span class="dot">●</span>
-                                <span class="sender">The Pragmatic Engineer</span>
-                                <span class="time">2m</span>
+                    <div class="feature-visual">
+                        <div class="mockup mockup-menubar">
+                            <div class="menubar-strip">
+                                <div class="menubar-items">
+                                    <span class="menubar-item">Wi-Fi</span>
+                                    <span class="menubar-item">Battery</span>
+                                    <span class="menubar-item menubar-active">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                            <path d="M22 7l-10 7L2 7"/>
+                                        </svg>
+                                        5
+                                    </span>
+                                    <span class="menubar-item">3:42 PM</span>
+                                </div>
                             </div>
-                            <div class="subject">How Stripe Builds Software</div>
-                            <div class="snippet">"Last week I sat down with..."</div>
                         </div>
-                        <div class="newsletter-item unread">
-                            <div class="item-header">
-                                <span class="dot">●</span>
-                                <span class="sender">Lenny's Newsletter</span>
-                                <span class="time">18m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 2: Clean List View -->
+        <div class="feature feature-alt">
+            <div class="container">
+                <div class="feature-grid feature-grid-reverse">
+                    <div class="feature-content">
+                        <div class="feature-label">Smart Detection</div>
+                        <h2>Automatically finds your newsletters.</h2>
+                        <p>Connects to Gmail or Outlook via OAuth. Detects newsletters automatically. Strips ads, tracking pixels, and formatting noise.</p>
+                        <p>Everything syncs back -- archive in Newsletter, it's archived in Gmail. No duplicate data.</p>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="mockup mockup-popover">
+                            <div class="popover-header">
+                                <span class="popover-title">Inbox</span>
+                                <span class="popover-count">5 unread</span>
+                                <span class="popover-shortcut">
+                                    <kbd>Cmd</kbd><kbd>K</kbd>
+                                </span>
                             </div>
-                            <div class="subject">The Art of Product Roadmaps</div>
-                            <div class="snippet">"Every PM I talk to strug..."</div>
-                        </div>
-                        <div class="newsletter-item">
-                            <div class="item-header">
-                                <span class="dot read-dot">○</span>
-                                <span class="sender">Stratechery</span>
-                                <span class="time">1h</span>
+                            <div class="popover-list">
+                                <div class="popover-item popover-item-unread">
+                                    <div class="popover-item-dot"></div>
+                                    <div class="popover-item-body">
+                                        <div class="popover-item-top">
+                                            <span class="popover-item-sender">The Pragmatic Engineer</span>
+                                            <span class="popover-item-time">2m</span>
+                                        </div>
+                                        <div class="popover-item-subject">How Stripe Builds Software</div>
+                                        <div class="popover-item-snippet">Last week I sat down with a senior...</div>
+                                    </div>
+                                </div>
+                                <div class="popover-item popover-item-unread">
+                                    <div class="popover-item-dot"></div>
+                                    <div class="popover-item-body">
+                                        <div class="popover-item-top">
+                                            <span class="popover-item-sender">Lenny's Newsletter</span>
+                                            <span class="popover-item-time">18m</span>
+                                        </div>
+                                        <div class="popover-item-subject">The Art of Product Roadmaps</div>
+                                        <div class="popover-item-snippet">Every PM I talk to struggles with...</div>
+                                    </div>
+                                </div>
+                                <div class="popover-item">
+                                    <div class="popover-item-dot popover-item-dot-read"></div>
+                                    <div class="popover-item-body">
+                                        <div class="popover-item-top">
+                                            <span class="popover-item-sender">Stratechery</span>
+                                            <span class="popover-item-time">1h</span>
+                                        </div>
+                                        <div class="popover-item-subject">Apple's Services Ambition</div>
+                                        <div class="popover-item-snippet">The most important number in...</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="subject">Apple's Services Ambition</div>
-                            <div class="snippet">"The most important numb..."</div>
+                            <div class="popover-footer">
+                                <span>Last synced 2 minutes ago</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="popover-footer">
-                        <span>Last sync: 2m ago</span>
-                    </div>
                 </div>
             </div>
-            <div class="feature-content">
-                <h2>Automatically detects newsletters</h2>
-                <p>Connects to your Gmail or Outlook via IMAP. Pulls in newsletters. Strips ads, tracking pixels, and formatting noise.</p>
-                <p>Everything syncs back to your inbox — archive in Newsletter, it's archived in Gmail. No duplicate data. No new workflow to learn.</p>
-            </div>
         </div>
-    </section>
 
-    <!-- Feature 3: Reader View -->
-    <section class="feature">
-        <div class="container">
-            <div class="feature-content">
-                <h2>Distraction-free reader</h2>
-                <p>Clean markdown rendering. Scroll progress indicator. Action bar at the bottom.</p>
-                <p>Read, archive, star, or unsubscribe — all without leaving the app.</p>
-            </div>
-            <div class="feature-visual">
-                <div class="mockup reader-view">
-                    <div class="reader-header">
-                        <span>← Back</span>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 75%"></div>
+        <!-- Feature 3: Reader View -->
+        <div class="feature">
+            <div class="container">
+                <div class="feature-grid">
+                    <div class="feature-content">
+                        <div class="feature-label">Reader View</div>
+                        <h2>Distraction-free reading.</h2>
+                        <p>Clean typography. Scroll progress. Inline actions. Everything you need to read, archive, star, or unsubscribe -- without leaving the app.</p>
+                        <p>No ads. No sidebars. No distractions. Just the writing.</p>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="mockup mockup-reader">
+                            <div class="reader-toolbar">
+                                <span class="reader-back">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="15 18 9 12 15 6"/>
+                                    </svg>
+                                    Back
+                                </span>
+                                <div class="reader-progress-bar">
+                                    <div class="reader-progress-fill" style="width: 75%"></div>
+                                </div>
+                                <span class="reader-progress-text">75%</span>
+                            </div>
+                            <div class="reader-body">
+                                <h3 class="reader-title">How Stripe Builds Software</h3>
+                                <p class="reader-byline">The Pragmatic Engineer &middot; Feb 7, 2025</p>
+                                <div class="reader-text">
+                                    <p>Last week I sat down with a senior engineering manager at Stripe to understand how they approach reliability at scale...</p>
+                                    <h4>The On-Call Philosophy</h4>
+                                    <p>Every engineer at Stripe rotates through on-call. There are no dedicated SRE teams for most services -- the team that builds it, runs it...</p>
+                                </div>
+                            </div>
+                            <div class="reader-action-bar">
+                                <button class="reader-action">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="3 6 5 6 21 6"/>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                    </svg>
+                                    Archive
+                                </button>
+                                <button class="reader-action">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                                    </svg>
+                                    Star
+                                </button>
+                                <button class="reader-action">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"/>
+                                        <line x1="6" y1="6" x2="18" y2="18"/>
+                                    </svg>
+                                    Unsubscribe
+                                </button>
+                            </div>
                         </div>
-                        <span>75%</span>
                     </div>
-                    <div class="reader-content">
-                        <h3>How Stripe Builds Software</h3>
-                        <p class="reader-meta">The Pragmatic Engineer · Feb 7</p>
-                        <div class="reader-body">
-                            <p>Last week I sat down with a senior engineering manager at Stripe to understand how they approach reliability at scale...</p>
-                            <h4>The On-Call Philosophy</h4>
-                            <p>Every engineer at Stripe rotates through on-call. There are no dedicated SRE teams for most services — the team that builds it, runs it...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature 4: Keyboard-First -->
+        <div class="feature feature-alt">
+            <div class="container">
+                <div class="feature-grid feature-grid-reverse">
+                    <div class="feature-content">
+                        <div class="feature-label">Keyboard First</div>
+                        <h2>Every action, no mouse required.</h2>
+                        <p>Arrow keys to navigate. Enter to read. E to archive. Escape to go back. Every action is one or two keystrokes away.</p>
+                        <p>Press <kbd>Cmd</kbd><kbd>K</kbd> to open the command palette for anything else.</p>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="shortcuts-grid">
+                            <div class="shortcut-card">
+                                <div class="shortcut-keys"><kbd>Up</kbd> <kbd>Down</kbd></div>
+                                <div class="shortcut-label">Navigate</div>
+                            </div>
+                            <div class="shortcut-card">
+                                <div class="shortcut-keys"><kbd>Return</kbd></div>
+                                <div class="shortcut-label">Open</div>
+                            </div>
+                            <div class="shortcut-card">
+                                <div class="shortcut-keys"><kbd>E</kbd></div>
+                                <div class="shortcut-label">Archive</div>
+                            </div>
+                            <div class="shortcut-card">
+                                <div class="shortcut-keys"><kbd>S</kbd></div>
+                                <div class="shortcut-label">Star</div>
+                            </div>
+                            <div class="shortcut-card">
+                                <div class="shortcut-keys"><kbd>Esc</kbd></div>
+                                <div class="shortcut-label">Go Back</div>
+                            </div>
+                            <div class="shortcut-card shortcut-card-highlight">
+                                <div class="shortcut-keys"><kbd>Cmd</kbd> <kbd>K</kbd></div>
+                                <div class="shortcut-label">Command Palette</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="reader-actions">
-                        <button>[Archive]</button>
-                        <button>[Star]</button>
-                        <button>[Unsubscribe]</button>
-                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Feature 4: Keyboard-First -->
-    <section class="feature feature-alt">
-        <div class="container">
-            <div class="feature-visual">
-                <div class="keyboard-shortcuts">
-                    <div class="shortcut-item">
-                        <span class="key">↑ ↓</span>
-                        <span class="action">Navigate</span>
+        <!-- Feature 5: Privacy -->
+        <div class="feature-privacy">
+            <div class="container container-narrow">
+                <div class="privacy-icon">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                </div>
+                <h2>Your data never leaves your Mac.</h2>
+                <p class="privacy-description">All email content is processed locally on your device. No servers. No analytics. No telemetry. No cloud sync. Just read-only IMAP access stored securely in your Keychain.</p>
+                <div class="privacy-badges">
+                    <div class="privacy-badge-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Local-only processing
                     </div>
-                    <div class="shortcut-item">
-                        <span class="key">Return</span>
-                        <span class="action">Open</span>
+                    <div class="privacy-badge-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        No tracking or analytics
                     </div>
-                    <div class="shortcut-item">
-                        <span class="key">E</span>
-                        <span class="action">Archive</span>
-                    </div>
-                    <div class="shortcut-item">
-                        <span class="key">S</span>
-                        <span class="action">Star</span>
-                    </div>
-                    <div class="shortcut-item">
-                        <span class="key">⌘K</span>
-                        <span class="action">Command Palette</span>
+                    <div class="privacy-badge-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Keychain-secured credentials
                     </div>
                 </div>
             </div>
-            <div class="feature-content">
-                <h2>Keyboard-first navigation</h2>
-                <p>Every action is reachable without a mouse. Arrow keys to navigate, Enter to read, E to archive, Escape to go back.</p>
-                <p>⌘K opens a command palette for quick actions. Speed-oriented by design — the app should never make you wait.</p>
-            </div>
         </div>
-    </section>
 
-    <!-- Feature 5: Privacy -->
-    <section class="feature">
-        <div class="container">
-            <div class="feature-content">
-                <h2>Your newsletters, your privacy</h2>
-                <p>All email content is processed <strong>locally on-device</strong>. Nothing leaves your machine.</p>
-                <p>No analytics. No telemetry. No cloud sync. Read-only IMAP access in your Keychain.</p>
-            </div>
-            <div class="feature-visual">
-                <div class="privacy-badge">
-                    <h3>🔒 Local-Only Processing</h3>
-                    <p>No servers. No tracking. Your data stays yours.</p>
-                </div>
-            </div>
-        </div>
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing">
-        <div class="container">
-            <h2>Simple pricing</h2>
+    <section id="pricing" class="pricing">
+        <div class="container container-narrow">
+            <h2>Simple, fair pricing.</h2>
+            <p class="pricing-subtitle">One price. No subscriptions. No upsells.</p>
             <div class="price-card">
-                <h3>Newsletter</h3>
-                <p class="price">$9.99 <span class="period">one-time</span></p>
-                <ul class="features-list">
-                    <li>✓ Unlimited newsletters</li>
-                    <li>✓ Gmail & Outlook support</li>
-                    <li>✓ Keyboard-first navigation</li>
-                    <li>✓ Command palette (⌘K)</li>
-                    <li>✓ Local-only processing</li>
-                    <li>✓ Lifetime updates</li>
+                <div class="price-card-header">
+                    <h3>Newsletter</h3>
+                    <p class="price-card-desc">Everything you need to read newsletters beautifully.</p>
+                </div>
+                <div class="price-amount">
+                    <span class="price-dollar">$9</span><span class="price-cents">.99</span>
+                    <span class="price-period">one-time purchase</span>
+                </div>
+                <a href="#buy" class="btn btn-primary btn-full">Buy License</a>
+                <ul class="price-features">
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Unlimited newsletters
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Gmail and Outlook support
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Keyboard-first navigation
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Command palette
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Local-only privacy
+                    </li>
+                    <li>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        Lifetime updates
+                    </li>
                 </ul>
-                <a href="#buy" class="btn btn-primary">Buy License</a>
             </div>
-            <p class="trial-note">Free 14-day trial • macOS 14.0+ required</p>
+            <p class="pricing-note">Free 14-day trial &middot; No credit card required &middot; 30-day money-back guarantee</p>
         </div>
     </section>
 
     <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2>Questions?</h2>
-            <div class="faq-item">
-                <h3>How does it work?</h3>
-                <p>Newsletter connects to your existing email (Gmail or Outlook) via IMAP, automatically detects newsletters, and gives you a clean reader view. Every action syncs back to your inbox — archive in Newsletter, it's archived in Gmail.</p>
-            </div>
-            <div class="faq-item">
-                <h3>What email providers are supported?</h3>
-                <p>Gmail and Outlook via OAuth 2.0. Any IMAP-compatible email service will work.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Is my data private?</h3>
-                <p>Yes. All email content is processed locally on your Mac. Nothing is sent to our servers. We don't track usage, collect analytics, or sync data to the cloud.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I use this on multiple Macs?</h3>
-                <p>Yes. One license works on all your Macs. Your read state is synced through your email provider (via IMAP flags), so marking something as read on one Mac updates it everywhere.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Can I get a refund?</h3>
-                <p>Absolutely. 30-day money-back guarantee, no questions asked.</p>
+    <section id="faq" class="faq">
+        <div class="container container-narrow">
+            <h2>Frequently asked questions.</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>How does it work?</summary>
+                    <p>Newsletter connects to your existing email (Gmail or Outlook) via OAuth, automatically detects newsletters, and gives you a clean reader view. Every action syncs back to your inbox -- archive in Newsletter, it's archived in Gmail.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>What email providers are supported?</summary>
+                    <p>Gmail and Outlook via OAuth 2.0. Any IMAP-compatible email service will work with manual configuration.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Is my data private?</summary>
+                    <p>Yes. All email content is processed locally on your Mac. Nothing is sent to our servers. We don't track usage, collect analytics, or sync data to the cloud.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I use this on multiple Macs?</summary>
+                    <p>Yes. One license works on all your personal Macs. Your read state syncs through your email provider via IMAP flags, so marking something as read on one Mac updates it everywhere.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>Can I get a refund?</summary>
+                    <p>Absolutely. 30-day money-back guarantee, no questions asked. Just email us.</p>
+                </details>
             </div>
         </div>
     </section>
 
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container container-narrow">
+            <h2>Start reading newsletters<br>the way they were meant to be read.</h2>
+            <div class="cta-buttons">
+                <a href="#download" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="7 10 12 15 17 10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                    </svg>
+                    Download for Mac
+                </a>
+            </div>
+            <p class="hero-meta">macOS 14.0 or later &middot; Free 14-day trial</p>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>Built by <a href="https://spoil.co" target="_blank">Spoil</a> · <a href="https://github.com/mitchellfarley/Newsletter" target="_blank">View on GitHub</a></p>
-            <div class="social-links">
-                <a href="#">Twitter</a>
-                <a href="#">Email</a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M22 7l-10 7L2 7"/>
+                    </svg>
+                    Newsletter
+                </div>
+                <div class="footer-links">
+                    <a href="https://spoil.co" target="_blank">Built by Spoil</a>
+                    <a href="https://github.com/mitchellfarley/Newsletter" target="_blank">GitHub</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="footer-legal">
+                <p>Copyright 2025 Spoil. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
 </body>
 </html>
