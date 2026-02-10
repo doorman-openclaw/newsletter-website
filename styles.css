@@ -21,10 +21,11 @@ body {
     font-size: 17px;
     line-height: 1.47059;
     color: #1d1d1f;
-    background: #ffffff;
+    background: linear-gradient(180deg, #e3f2fd 0%, #ffffff 50%);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    position: relative;
 }
 
 /* Layout */
@@ -206,13 +207,69 @@ kbd {
 }
 
 /* ==========================================================================
+   Clouds Background
+   ========================================================================== */
+
+.clouds-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 100px;
+    opacity: 0.7;
+    animation: float linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 100px;
+}
+
+.cloud::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 10px;
+}
+
+.cloud::after {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    right: 10px;
+}
+
+@keyframes float {
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(calc(100vw + 200px));
+    }
+}
+
+/* ==========================================================================
    Hero Section
    ========================================================================== */
 
 .hero {
     padding: 140px 22px 100px;
     text-align: center;
-    background: #ffffff;
+    background: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-eyebrow {
@@ -273,9 +330,12 @@ kbd {
 
 .social-proof {
     padding: 48px 22px;
-    background: #fbfbfd;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
     border-top: 1px solid rgba(0, 0, 0, 0.04);
     border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    position: relative;
+    z-index: 1;
 }
 
 .proof-items {
@@ -318,7 +378,9 @@ kbd {
 .problem {
     padding: 120px 22px;
     text-align: center;
-    background: #ffffff;
+    background: transparent;
+    position: relative;
+    z-index: 1;
 }
 
 .problem h2 {
@@ -346,10 +408,13 @@ kbd {
 .feature {
     padding: 120px 22px;
     background: #ffffff;
+    position: relative;
+    z-index: 1;
 }
 
 .feature-alt {
-    background: #fbfbfd;
+    background: rgba(251, 251, 253, 0.9);
+    backdrop-filter: blur(10px);
 }
 
 .feature-grid {
@@ -749,6 +814,8 @@ kbd {
     text-align: center;
     background: #ffffff;
     border-top: 1px solid rgba(0, 0, 0, 0.04);
+    position: relative;
+    z-index: 1;
 }
 
 .privacy-icon {
@@ -802,7 +869,10 @@ kbd {
 .pricing {
     padding: 120px 22px;
     text-align: center;
-    background: #fbfbfd;
+    background: rgba(251, 251, 253, 0.9);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
 }
 
 .pricing h2 {
@@ -906,6 +976,8 @@ kbd {
 .faq {
     padding: 120px 22px;
     background: #ffffff;
+    position: relative;
+    z-index: 1;
 }
 
 .faq h2 {
@@ -977,7 +1049,10 @@ kbd {
 .final-cta {
     padding: 120px 22px;
     text-align: center;
-    background: linear-gradient(180deg, #fbfbfd 0%, #ffffff 100%);
+    background: linear-gradient(180deg, rgba(251, 251, 253, 0.9) 0%, rgba(255, 255, 255, 0.9) 100%);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
 }
 
 .final-cta h2 {
@@ -992,6 +1067,8 @@ kbd {
     padding: 32px 22px;
     background: #f5f5f7;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 1;
 }
 
 .footer-content {
