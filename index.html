@@ -3,93 +3,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Newsletter — Manage your subscriptions</title>
-    <meta name="description" content="A simple newsletter manager. Organize your subscriptions, read later, and never miss what matters.">
+    <title>Newsletter — A macOS menu bar app for reading newsletters</title>
+    <meta name="description" content="Read and triage newsletters from your Mac's menu bar. Connect your Gmail or Outlook, see what's unread, and never fall behind again.">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1 class="logo">Newsletter</h1>
-            <p class="tagline">Manage your subscriptions in one place</p>
-            <p class="description">See what's unread, organize by topic, and never lose track of newsletters again.</p>
+            <div class="menu-bar-preview">
+                <span class="menu-icon">✉ 5</span>
+            </div>
+            <h1>A newsletter reader in your Mac's menu bar</h1>
+            <p class="tagline">Pull newsletters out of your inbox and into a dedicated, keyboard-first reading environment.</p>
+            <p class="description">Click the icon, scan your feed, read what matters, archive the rest. No new accounts. No RSS migration. Connect your email and your newsletters are already there.</p>
             <div class="cta-buttons">
                 <a href="#download" class="btn btn-primary">Download for Free</a>
                 <a href="#demo" class="btn btn-secondary">Watch Demo</a>
             </div>
+            <p class="platform-note">macOS 14.0+ • 14-day trial • $9.99 one-time</p>
         </div>
     </header>
 
-    <!-- Feature 1: Quick Overview -->
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <h2>The Problem</h2>
+            <p>Newsletters are the best content on the internet, but they're <strong>buried in your inbox</strong> alongside receipts, notifications, and cold outreach.</p>
+            <p>You either ignore them or context-switch out of real work to read them. Most people fall behind, mark-all-as-read, and lose the content they actually subscribed for.</p>
+            <p class="highlight">Email clients aren't built for this. They optimize for reply speed, not reading.</p>
+        </div>
+    </section>
+
+    <!-- Feature 1: Menu Bar -->
     <section class="feature">
         <div class="container">
             <div class="feature-content">
-                <h2>All your newsletters, organized</h2>
-                <p>Automatically categorize subscriptions by topic. Tech, business, design — all separated and ready to read.</p>
+                <h2>Lives in your menu bar</h2>
+                <p>Not your dock. Not a browser tab. Not another window to manage.</p>
+                <p>Click the icon (or hit a hotkey), scan your feed, read what matters. Close it and it's gone. The icon shows your unread count or estimated reading time at a glance.</p>
             </div>
             <div class="feature-visual">
                 <div class="mockup">
+                    <div class="menu-bar-demo">
+                        <div class="menu-bar-top">
+                            <span>Wi-Fi</span>
+                            <span>Battery</span>
+                            <span class="active">✉ 5</span>
+                            <span>Clock</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 2: Clean List View -->
+    <section class="feature feature-alt">
+        <div class="container">
+            <div class="feature-visual">
+                <div class="mockup list-view">
+                    <div class="popover-header">
+                        <span>Inbox (5 unread)</span>
+                        <span class="shortcut">⌘K</span>
+                    </div>
                     <div class="newsletter-list">
-                        <div class="newsletter-item">📰 Tech Weekly <span class="badge">3 new</span></div>
-                        <div class="newsletter-item">💼 Business Insider <span class="badge">1 new</span></div>
-                        <div class="newsletter-item">🎨 Design Digest <span class="badge">5 new</span></div>
+                        <div class="newsletter-item unread">
+                            <div class="item-header">
+                                <span class="dot">●</span>
+                                <span class="sender">The Pragmatic Engineer</span>
+                                <span class="time">2m</span>
+                            </div>
+                            <div class="subject">How Stripe Builds Software</div>
+                            <div class="snippet">"Last week I sat down with..."</div>
+                        </div>
+                        <div class="newsletter-item unread">
+                            <div class="item-header">
+                                <span class="dot">●</span>
+                                <span class="sender">Lenny's Newsletter</span>
+                                <span class="time">18m</span>
+                            </div>
+                            <div class="subject">The Art of Product Roadmaps</div>
+                            <div class="snippet">"Every PM I talk to strug..."</div>
+                        </div>
+                        <div class="newsletter-item">
+                            <div class="item-header">
+                                <span class="dot read-dot">○</span>
+                                <span class="sender">Stratechery</span>
+                                <span class="time">1h</span>
+                            </div>
+                            <div class="subject">Apple's Services Ambition</div>
+                            <div class="snippet">"The most important numb..."</div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Feature 2: Read Later -->
-    <section class="feature feature-alt">
-        <div class="container">
-            <div class="feature-visual">
-                <div class="mockup">
-                    <div class="read-later-preview">
-                        <h3>📚 Saved for Later</h3>
-                        <p>8 articles waiting</p>
+                    <div class="popover-footer">
+                        <span>Last sync: 2m ago</span>
                     </div>
                 </div>
             </div>
             <div class="feature-content">
-                <h2>Save for when you have time</h2>
-                <p>One click to save. Articles stay ready until you're done. No more losing that interesting newsletter in your inbox.</p>
+                <h2>Automatically detects newsletters</h2>
+                <p>Connects to your Gmail or Outlook via IMAP. Pulls in newsletters. Strips ads, tracking pixels, and formatting noise.</p>
+                <p>Everything syncs back to your inbox — archive in Newsletter, it's archived in Gmail. No duplicate data. No new workflow to learn.</p>
             </div>
         </div>
     </section>
 
-    <!-- Feature 3: Smart Filters -->
+    <!-- Feature 3: Reader View -->
     <section class="feature">
         <div class="container">
             <div class="feature-content">
-                <h2>Find what matters with smart filters</h2>
-                <p>Unread only. This week. By sender. Filter however you want and get back to reading.</p>
+                <h2>Distraction-free reader</h2>
+                <p>Clean markdown rendering. Scroll progress indicator. Action bar at the bottom.</p>
+                <p>Read, archive, star, or unsubscribe — all without leaving the app.</p>
             </div>
             <div class="feature-visual">
-                <div class="mockup">
-                    <div class="filter-bar">
-                        <button class="filter-btn active">All</button>
-                        <button class="filter-btn">Unread</button>
-                        <button class="filter-btn">This Week</button>
-                        <button class="filter-btn">Starred</button>
+                <div class="mockup reader-view">
+                    <div class="reader-header">
+                        <span>← Back</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 75%"></div>
+                        </div>
+                        <span>75%</span>
+                    </div>
+                    <div class="reader-content">
+                        <h3>How Stripe Builds Software</h3>
+                        <p class="reader-meta">The Pragmatic Engineer · Feb 7</p>
+                        <div class="reader-body">
+                            <p>Last week I sat down with a senior engineering manager at Stripe to understand how they approach reliability at scale...</p>
+                            <h4>The On-Call Philosophy</h4>
+                            <p>Every engineer at Stripe rotates through on-call. There are no dedicated SRE teams for most services — the team that builds it, runs it...</p>
+                        </div>
+                    </div>
+                    <div class="reader-actions">
+                        <button>[Archive]</button>
+                        <button>[Star]</button>
+                        <button>[Unsubscribe]</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Feature 4: Privacy -->
+    <!-- Feature 4: Keyboard-First -->
     <section class="feature feature-alt">
         <div class="container">
             <div class="feature-visual">
-                <div class="privacy-badge">
-                    <h3>🔒 Privacy First</h3>
-                    <p>No tracking. No ads. Your data stays yours.</p>
+                <div class="keyboard-shortcuts">
+                    <div class="shortcut-item">
+                        <span class="key">↑ ↓</span>
+                        <span class="action">Navigate</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="key">Return</span>
+                        <span class="action">Open</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="key">E</span>
+                        <span class="action">Archive</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="key">S</span>
+                        <span class="action">Star</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <span class="key">⌘K</span>
+                        <span class="action">Command Palette</span>
+                    </div>
                 </div>
             </div>
+            <div class="feature-content">
+                <h2>Keyboard-first navigation</h2>
+                <p>Every action is reachable without a mouse. Arrow keys to navigate, Enter to read, E to archive, Escape to go back.</p>
+                <p>⌘K opens a command palette for quick actions. Speed-oriented by design — the app should never make you wait.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature 5: Privacy -->
+    <section class="feature">
+        <div class="container">
             <div class="feature-content">
                 <h2>Your newsletters, your privacy</h2>
-                <p>We don't read your emails. We don't sell your data. Simple as that.</p>
+                <p>All email content is processed <strong>locally on-device</strong>. Nothing leaves your machine.</p>
+                <p>No analytics. No telemetry. No cloud sync. Read-only IMAP access in your Keychain.</p>
+            </div>
+            <div class="feature-visual">
+                <div class="privacy-badge">
+                    <h3>🔒 Local-Only Processing</h3>
+                    <p>No servers. No tracking. Your data stays yours.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -99,18 +202,19 @@
         <div class="container">
             <h2>Simple pricing</h2>
             <div class="price-card">
-                <h3>Newsletter Pro</h3>
+                <h3>Newsletter</h3>
                 <p class="price">$9.99 <span class="period">one-time</span></p>
                 <ul class="features-list">
                     <li>✓ Unlimited newsletters</li>
-                    <li>✓ Smart categorization</li>
-                    <li>✓ Read later queue</li>
-                    <li>✓ Advanced filters</li>
+                    <li>✓ Gmail & Outlook support</li>
+                    <li>✓ Keyboard-first navigation</li>
+                    <li>✓ Command palette (⌘K)</li>
+                    <li>✓ Local-only processing</li>
                     <li>✓ Lifetime updates</li>
                 </ul>
                 <a href="#buy" class="btn btn-primary">Buy License</a>
             </div>
-            <p class="trial-note">Free 14-day trial included</p>
+            <p class="trial-note">Free 14-day trial • macOS 14.0+ required</p>
         </div>
     </section>
 
@@ -120,15 +224,19 @@
             <h2>Questions?</h2>
             <div class="faq-item">
                 <h3>How does it work?</h3>
-                <p>Connect your email, and we'll automatically detect and organize your newsletter subscriptions. Everything stays in your inbox — we just make it easier to manage.</p>
+                <p>Newsletter connects to your existing email (Gmail or Outlook) via IMAP, automatically detects newsletters, and gives you a clean reader view. Every action syncs back to your inbox — archive in Newsletter, it's archived in Gmail.</p>
             </div>
             <div class="faq-item">
-                <h3>What platforms are supported?</h3>
-                <p>Gmail, Outlook, iCloud, and any IMAP email provider.</p>
+                <h3>What email providers are supported?</h3>
+                <p>Gmail and Outlook via OAuth 2.0. Any IMAP-compatible email service will work.</p>
             </div>
             <div class="faq-item">
                 <h3>Is my data private?</h3>
-                <p>Yes. We use read-only access and never store email content. Everything runs locally on your device.</p>
+                <p>Yes. All email content is processed locally on your Mac. Nothing is sent to our servers. We don't track usage, collect analytics, or sync data to the cloud.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I use this on multiple Macs?</h3>
+                <p>Yes. One license works on all your Macs. Your read state is synced through your email provider (via IMAP flags), so marking something as read on one Mac updates it everywhere.</p>
             </div>
             <div class="faq-item">
                 <h3>Can I get a refund?</h3>
@@ -140,10 +248,9 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>Built with ☕ by <a href="https://spoil.co" target="_blank">Spoil</a></p>
+            <p>Built by <a href="https://spoil.co" target="_blank">Spoil</a> · <a href="https://github.com/mitchellfarley/Newsletter" target="_blank">View on GitHub</a></p>
             <div class="social-links">
                 <a href="#">Twitter</a>
-                <a href="#">GitHub</a>
                 <a href="#">Email</a>
             </div>
         </div>
